@@ -22,6 +22,7 @@ public class GhprbPullRequest{
 	private String reponame;
 	private String target;
 	private String authorEmail;
+    private String origin;
 
 	private boolean shouldRun = false;
 	private boolean accepted = false;
@@ -39,6 +40,7 @@ public class GhprbPullRequest{
 		title = pr.getTitle();
 		reponame = repo.getName();
 		target = pr.getBase().getRef();
+        origin=pr.getBase().getRepository().getName();
 		obtainAuthorEmail(pr);
 
 		this.ml = helper;
@@ -262,4 +264,7 @@ public class GhprbPullRequest{
 	public String getTitle() {
 		return title;
 	}
+    public String getOrigin() {
+        return origin;
+    }
 }

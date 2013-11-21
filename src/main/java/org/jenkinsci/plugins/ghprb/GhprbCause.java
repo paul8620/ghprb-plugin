@@ -16,16 +16,16 @@ public class GhprbCause extends Cause{
 	private final String title;
 
 
-    private final String head;
+    private final String origin;
 
-	public GhprbCause(String commit, int pullID, boolean merged, String targetBranch, String authorEmail, String title,String head){
+	public GhprbCause(String commit, int pullID, boolean merged, String targetBranch, String authorEmail, String title,String origin){
 		this.commit = commit;
 		this.pullID = pullID;
 		this.merged = merged;
 		this.targetBranch = targetBranch;
 		this.authorEmail = authorEmail;
 		this.title = title;
-        this.head = head;
+        this.origin = origin;
 	}
 
 	@Override
@@ -68,8 +68,8 @@ public class GhprbCause extends Cause{
 	public String getAbbreviatedTitle() {
 		return StringUtils.abbreviate(getTitle(), 30);
 	}
-    public String getHead() {
-        return head;
+    public String getOrigin() {
+        return origin;
     }
 
 

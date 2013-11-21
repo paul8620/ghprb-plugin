@@ -36,7 +36,7 @@ public class GhprbBuilds {
 			sb.append(" Build triggered.");
 		}
 
-		GhprbCause cause = new GhprbCause(pr.getHead(), pr.getId(), pr.isMergeable(), pr.getTarget(), pr.getAuthorEmail(), pr.getTitle(),pr.getHead());
+		GhprbCause cause = new GhprbCause(pr.getHead(), pr.getId(), pr.isMergeable(), pr.getTarget(), pr.getAuthorEmail(), pr.getTitle(),pr.getOrigin());
 
 		QueueTaskFuture<?> build = trigger.startJob(cause);
 		if(build == null){
